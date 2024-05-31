@@ -1,0 +1,435 @@
+:root {
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color: #333;
+    --primary-color: rgb(238, 77, 45);
+}
+* {
+    box-sizing: inherit;
+}
+html {
+
+    font-size: 62.5%; 
+    /* 10px - 100%*/
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+.grid {
+    width: 1600px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+.grid__full-width {
+    width: 100%;
+}
+.gid__row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+/* Animation */
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.header__style {
+    height: 15rem;
+    background-color: white;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    
+}
+.header__style-title{
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+    /* position: fixed;
+    top: 0; */
+    
+}
+.UTE_img {
+    height: 12rem;
+    position: absolute;
+    left: 3rem;
+    top: 0;
+}
+.logo_ute {
+    height: 12rem;
+    position: absolute;
+    right: 4.5rem;
+    top: 0;
+}
+.title {
+    color: var(--white-color);
+    font-size: 1.4rem;
+    text-align: center;
+    margin: 0 0 10px 20px
+}
+.nav{
+    min-height: 30px;
+    background-color:rgb(237, 242, 243);
+    display: flex;
+    justify-content: space-between; 
+     position: fixed;
+    top: 12rem;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+.nav-list{
+    padding-left: 0;
+    margin: auto 16px;
+}
+.nav-item{
+    color: blue;
+    list-style: none;
+    margin: 0 8px;
+    display: inline-block;
+    font-size: 2rem;
+    text-decoration: none;
+    
+  
+}
+/* ================================================BUTTON==================================================== */
+
+.btn__area {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+    /* background-color: #57ace3; */
+    /* padding: 5rem; */
+    border-radius: 8rem;
+    
+    
+}
+.button {
+border: none;
+background-color: transparent;
+outline: none;
+font-size: 2rem;
+color: var(--text-color);
+padding: 1.2rem 4.8rem;
+border-radius: 4rem;
+cursor: pointer;
+transition: opacity 0.2s linear;
+width: min-content;
+margin-left: 2rem;
+}
+
+.button:hover {
+    opacity: 0.8;
+}
+.btn-item1 {
+background-color: #ff623d ;
+}
+.btn-item2 {
+background-color: #ff623d ;
+}
+.btn-item3 {
+background-color: #7fba00 ;
+}
+.btn-item4 {
+background-color: #7fba00 ;
+}
+.btn-item5 {
+background-color: #7fba00 ;
+}
+.btn-item6 {
+    background-color: #7fba00 ;    
+    }
+.btn__group img {
+    width: 15rem;
+    margin-left: 1px;
+}
+
+.btn__group {
+    display: flex;
+    flex-direction: column-reverse;
+    box-sizing: border-box;
+    background-color: var(--white-color);
+    padding: 1.5rem;
+    border-radius: 5rem;
+     text-align: center;
+    justify-content: space-between;
+    position: relative;
+}
+.wind__area { 
+    display: flex;
+    justify-content: center;
+}
+.state__button{
+height: 10rem;
+width: 20rem;
+background-color: red;
+margin: 2rem 0;
+}
+.img_size{
+    margin: 1rem 0 1rem 0;
+    transition: opacity 0.2s linear;
+    height: 17rem;
+    width: 7rem;
+}
+.img_size1{
+    transition: opacity 0.2s linear;
+    height: 32rem;
+    width: 20rem;
+}
+/* =================================================Monitor===================================== */
+
+   
+    h1     {font-size: 2rem; color: rgb(156, 5, 5); text-align:center; }
+    h2     {font-size: 2.5rem; color: black; margin-top: 1rem ; }
+    h3     {font-size: 1.7rem; color:black; }
+    h4     {font-size: 1.4rem; color: black; }
+    div.h1 {background-color: whitesmoke;}   
+/* ==============Mini display ======*/
+ .mini_display1 {
+    width: 21rem;
+    height: 9rem;
+    background-color: #fff;
+    border-radius: 1rem;
+    border: green solid 2px;
+    position: absolute;
+    top: -65px;
+    right: -66px;
+    z-index: 10;
+    display: none;
+    animation: appear ease-in 0.3s;
+    transform-origin: 10% top;
+ }    
+.amination:hover .mini_display1{
+    display: block;
+}
+/* ====================================mini display2 */
+.mini_display2 {
+    width: 21rem;
+    height: 9rem;
+    background-color: #fff;
+    border-radius: 1rem;
+    border: green solid 2px;
+    position: absolute;
+    top: -65px;
+    right: -44px;
+    z-index: 10;
+    display: none;
+    animation: appear ease-in 0.3s;
+    transform-origin: 10% top;
+ }    
+.amination:hover .mini_display2{
+    display: block;
+}
+/* =================================MINI DISPLAY3 */
+.mini_display3 {
+    width: 21rem;
+    height: 9rem;
+    background-color: #fff;
+    border-radius: 1rem;
+    border: green solid 2px;
+    position: absolute;
+    top: -65px;
+    right: -44px;
+    z-index: 10;
+    display: none;
+    animation: appear ease-in 0.3s;
+    transform-origin: 10% top;
+ }    
+.amination:hover .mini_display3{
+    display: block;
+}
+/* =========================================mini display4 */
+.mini_display4 {
+    width: 21rem;
+    height: 9rem;
+    background-color: #fff;
+    border-radius: 1rem;
+    border: green solid 2px;
+    position: absolute;
+    top: -71px;
+    right: -3px;
+    z-index: 10;
+    display: none;
+    animation: appear ease-in 0.3s;
+    transform-origin: 10% top;
+ }    
+.amination:hover .mini_display4{
+    display: block;
+}
+/* ---------------------------------------Temperature_box */
+.Temperature_box{
+    height: 12rem;
+    width: 36rem;
+    background-color: #eff4ef;
+    position: absolute;
+    left: 20%;
+    top: 10rem;
+    border-radius: 10rem;
+}
+.Temperature_box2{
+    height: 12rem;
+    width: 36rem;
+    background-color: #eff4ef;
+    position: absolute;
+    left: 20%;
+    top: 33rem;
+    border-radius: 10rem;
+}
+.Temperature_box3{
+    height: 12rem;
+    width: 36rem;
+    background-color: #eff4ef;
+    position: absolute;
+    left: 57%;
+    top: 10rem;
+    border-radius: 10rem;
+}
+.Temperature_box4{
+    height: 12rem;
+    width: 36rem;
+    background-color: #eff4ef;
+    position: absolute;
+    left: 57%;
+    top: 33rem;
+    border-radius: 10rem;
+}
+/* ======================================Footer=================================================== */
+.footer{
+    height: 300px;
+}
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 740px) {
+  /* … */
+  html {
+        font-size: 18.75%;
+        display: inline-block;
+        text-align: center;
+    }
+}
+.bibi{
+width: 100%;
+height: 15rem;
+background-color: transparent;
+}
+/* -----------------dịekhien-------------------- */
+.control-frame{
+    width: 100%;
+    height: 66.7rem;
+    background: rgba(202, 202, 202, 0.4);
+    padding-top: 3%;
+    position: relative;
+    z-index: 0;
+    overflow-y: scroll;
+}
+.control{
+    position: absolute;
+    width: 100%;
+    height: 80%;
+    margin: 0;
+    padding: 0;
+}
+.control-panel{
+    list-style: none;
+    display: inline-block;
+    vertical-align: top;
+}
+.control-title{
+    text-align: center;
+    font-size: 3.6rem;
+    font-weight: bolder;
+    margin: 0;
+    margin: 5% 0;
+    --font-primary: 'Source Sans Pro', sans-serif;
+}
+#control-panel{
+    width: 27%;
+    height: 100%;
+    background-color: #ffffff;
+    border-radius: 2.5rem;
+    box-shadow: 1px 1px 2px 2px rgb(97,97,107);
+    margin-left: 2%;
+}
+#control-valse{
+    width: 65%;
+    height: 100%;
+    background-color: #ffffff;
+    border-radius: 25px;
+    box-shadow: 1px 1px 2px 2px rgb(97,97,107);
+    margin-left: 2%;
+}
+#control-title-valse{
+    margin: 2.2% 0;
+  
+    
+}
+.background-imagine{
+    background-image: linear-gradient(0,rgba(166,216,88,0.6),rgba(215,215,215,0.1)),url(./IMG/Green-Tech.jpg) ;
+    
+    background-size: 100% ;
+    background-repeat: no-repeat;
+}
+.table_area{
+    padding-top: 2rem  ;
+    height: 30rem;
+    width: 100%;
+    background-color: transparent;
+    /* display: block; */
+   
+
+}
+table{
+    width: 55rem;
+    height: 22rem;
+    margin: 0 auto;
+    text-align: center;
+    /* background-color:rgba(166,216,88,1) ; */
+}
+table, td, th {
+    border: 0.2rem solid #7cccf0;
+    font-size: 2.5rem;
+}
+td, th {
+    padding: 1rem 0px;
+}
+.frame_AT{
+    position: relative;
+}
+.frame_auto
+{
+    height: 11rem;
+    width: 100%;
+    background-color: transparent;
+    border: 1rem rgba(166, 216, 88, 0.6) solid;
+    border-top-left-radius: 10rem;
+    border-bottom-right-radius: 10rem;
+    position: absolute;
+    text-align: center;
+    top: 35rem;
+    right: 0rem;
+    z-index: 100;
+    font-size: 2REM;
+    color: red;
+}
+.control_board {
+   margin-left: 5rem;
+   font-size: 2rem;
+}

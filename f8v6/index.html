@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Đồ án ESP32</title>
+         <link rel="stylesheet" href="./lib/font/fontawesome-free-6.5.1-web/fontawesome-free-6.5.1-web/css/all.min.css">
+          <link rel="stylesheet" href="./lib/img/motor.jpg">
+        <link rel="icon" href="https://tse2.mm.bing.net/th?id=OIP.oPoSwnN87oIRrVrk1TazHgAAAA&pid=Api&P=0&h=180" type="image/x-icon">
+        <link rel="stylesheet" href="main.csgits">
+    </head>
+    <header class="header__style">
+      <div class>
+          <nav class="header__style-title">
+              <img  src="https://i.pinimg.com/originals/25/29/ff/2529fffff5adec4cc63d0efc7d52a7f4.png" alt="logoute" class="logo_ute">
+              <div class="title">
+                <span style="font-size:2rem; color: #0846a3; border-bottom: #0846a3 solid 3px;">ĐẠI HỌC SƯ PHẠM KỸ THUẬT TP. HỒ CHÍ MINH</span> <br>
+                <h4 style="font-size: 1.5rem; color: #e90000; margin: 0.8rem 0 0 0.5rem;">KHOA ĐIỆN-ĐIỆN TỬ </h4>
+                <h1><div >ESP32 WebSocket Server<br>Sử dụng webserver điều khiển và thu thập dữ liệu </div> </h1>
+              </div>
+               <img src="https://tse2.mm.bing.net/th?id=OIP.oPoSwnN87oIRrVrk1TazHgAAAA&pid=Api&P=0&h=180" alt="Logo SPKT" class="UTE_img">
+              
+            </nav>
+      </div>
+</header> 
+<style>
+  .heading{
+    font-size: 3rem;
+    color: green;
+  }
+  .content-frame {
+    background-image: linear-gradient(0,rgba(242, 245, 238, 0.6),rgba(215,215,215,0.1)),url(./IMG/iot\ 2.png) ;
+    background-size: 100% ;
+    background-repeat: no-repeat;
+  }
+</style>
+    <body class="content-frame">   
+
+    <div class="nav">
+      <ul class="nav-list">
+        <li class="nav-item"><nav><a href="index.html" style="text-decoration: none;">GIỚI THIỆU</a></nav></li>
+        <li class="nav-item"><nav><a href="giamsat.html" style="text-decoration: none;">GIÁM SÁT</a></nav></li>
+        <li class="nav-item"><a href="dieukhien.html" style="text-decoration: none;">ĐIỀU KHIỂN</a></li>
+      </ul>
+      
+    </div>
+    <div class="bibi" id="lienket"></div>
+    <!-- ============================================================================ -->
+            <h1 class="heading"> SỬ DỤNG WEBSERVER ĐIỀU KHIỂN, GIÁM SÁT VÀ THU THẬP DỮ LIỆU <BR>ỨNG DỤNG PHÁT TRIỂN NÔNG NGHIỆP</BR></h1>
+    <!-- ============================================================================ -->
+    <h3 style="color: #333; height: 10rem; width: 50%; text-align: justify; margin-left: 4rem; font-size: 2rem;">
+      &emsp;Mô hình thiết kế của hệ thống dựa trên một mô hình nhà kính thực tế, ứng dụng công nghệ cao để giám sát và điều khiển từ xa. Hệ thống này sẽ lấy dữ liệu từ các cảm biếnmôi trường như nhiệt độ, độ ẩm và chỉ số PH, tạo ra một cơ sở dữ liệu toàn diện. Dữ liệu này giúp người trồng cây phân tích và đánh giá hiệu quả của các điều kiện trồng trọt, từ đó tối ưu hóa quá trình sản xuất nông nghiệp. Hệ thống không chỉ cải thiện việc quản lý nhà kính mà còn hỗ trợ người trồng ra quyết định dựa trên thông tin chủ động và chính xác.
+    </h3> <br> <br>
+    <h3 style="color: #333; height: 10rem; width: 50%; text-align: justify;margin: 4rem 0 0 3rem"> 
+      Yêu cầu đặt ra đối với hệ thống: <br>
+      &emsp;- Hệ thống web server phải được thiết kế với giao diện thân thiện và dễ sử dụng, giúp người dùng có thể truy cập và điều khiển hệ thống từ xa một cách thuận tiện. Giao diện phải trực quan, cung cấp các thông tin cần thiết một cách rõ ràng và dễ hiểu, giúp người quản lý nhà kính phải dễ tiếp thu, các thao tác điều khiển nhanh chóng và chính xác. <br>
+      &emsp;- Hệ thống cần đảm bảo khả năng truyền tải và hiển thị dữ liệu theo thời gian thực, bao gồm các chỉ số quan trọng như nhiệt độ môi trường và độ ẩm không khí. Việc cập nhật thời gian thực này rất quan trọng để người trồng có thể giám sát và điều chỉnh môi trường nhà kính một cách kịp thời, đảm bảo điều kiện lý tưởng cho sự phát triển của cây trồng. <br>
+      &emsp;- Các thiết bị có thể điều khiển từ xa thông qua web server. Điều này giúp tiết kiệm thời gian và công sức mà còn tăng cường khả năng quản lý hiệu quả của nhà kính, đảm bảo rằng các thiết bị luôn hoạt động trong điều kiện tối ưu nhất.
+
+    </h3>
+        <script src="https://www.gstatic.com/charts/loader.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gaugeJS/dist/gauge.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
+        <script src="main.js"></script>
+        
+        <div class="bibi" id="lk"></div>
+    </body>
+  
+</html>

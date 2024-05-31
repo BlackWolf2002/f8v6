@@ -1,0 +1,97 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Đồ án ESP32</title>
+         <link rel="stylesheet" href="./lib/font/fontawesome-free-6.5.1-web/fontawesome-free-6.5.1-web/css/all.min.css">
+          <link rel="stylesheet" href="./lib/img/motor.jpg">
+        <link rel="icon" href="https://tse2.mm.bing.net/th?id=OIP.oPoSwnN87oIRrVrk1TazHgAAAA&pid=Api&P=0&h=180" type="image/x-icon">
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body >   
+
+        
+        <script src="https://www.gstatic.com/charts/loader.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gaugeJS/dist/gauge.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
+        <script src="main.js"></script>
+        
+              <p id="control-title-valse" class="control-title">ĐIỀU KHIỂN BẰNG TAY</p>
+              <div class="btn__area grid">        
+                 
+                <span class="btn__group amination">
+                    <button class="button btn-item5" id="FANbtn"  onclick="fanONOFF()">BUTTON</button>
+                     <br>
+                    <img id="img-1" class="img_size " src="./IMG/light_off1.png" alt="">
+                    <a href="" style="text-decoration: none; font-size: 3rem;" class="">ĐÈN</a>
+                   <div class="mini_display1 ">
+                     <h2 style="text-align: left;color: #555; font-size: 2rem; margin-left: 2rem;">
+                          Dòng điện :<span style="color:#2e7dc1" id="current_1"> 9.99</span > <br>
+                          Điện áp&emsp; :<span style="color: #2e7dc1" id="voltage_1"> 99.99</span> <br>
+                          Công suất :<span style="color: #2e7dc1" id="pow_1"> 99.99</span> 
+                          <div style="position: absolute; top: 1rem; right: 1.9rem; font-size: 2rem;">
+                            A <br>
+                            V <br>
+                            W
+                         </div>
+                   </div>
+                </span> 
+                
+                <span class="btn__group amination"> 
+                    <button  class="button btn-item3" id="HUMbtn" onclick="humONOFF()">BUTTON</button>
+                    <img id="img-2" class="img_size" src="./IMG/fan_off.png"  >
+                    <a href="" style="text-decoration: none; font-size: 3rem;" class="">QUẠT</a>
+                   <div class="mini_display2 ">
+                     <h2 id="lk" style="text-align: left;color: #555; font-size: 2rem; margin-left: 2rem;">
+                          Dòng điện :<span style="color: #2e7dc1" id="current_2"> 9.99</span >&emsp; <br>
+                          Điện áp&emsp; :<span style="color: #2e7dc1" id="voltage_2"> 99.99 </span> <br>
+                          Công suất :<span style="color: #2e7dc1" id="pow_2"> 99.99</span> 
+                     </h2>
+                     <div style="position: absolute; top: 1rem; right: 2rem; font-size: 2rem;">
+                        A <br>
+                        V <br>
+                        W
+                     </div>
+                   </div>
+                </span> 
+                <span class="btn__group amination">
+                <button class="button btn-item5" id="HUMbtn2" onclick="humONOFF2()">BUTTON</button>     
+                    <br>
+                <img id="img-3" class="img_size" src="./IMG/spay_off.png" alt="">    
+                <a href="" style="text-decoration: none; font-size: 3rem;" class="">PHUN SƯƠNG</a>
+                   <div class="mini_display3 ">
+                     <h2 style="text-align: left;color: #555; font-size: 2rem; margin-left: 2rem;">
+                          Dòng điện :<span style="color:#2e7dc1" id="current_3"> 9.99</span > <br>
+                          Điện áp&emsp; :<span style="color: #2e7dc1" id="voltage_3"> 99.99</span> <br>
+                          Công suất :<span style="color: #2e7dc1" id="pow_3"> 99.99</span> 
+                     </h2>
+                     <div style="position: absolute; top: 1rem; right: 2rem; font-size: 2rem;">
+                        A <br>
+                        V <br>
+                        W
+                     </div>
+                   </div>
+                </span>
+                <span class="btn__group amination">
+                    <button class="button btn-item3" id="HUMbtn3" onclick="humONOFF3()">BUTTON</button>
+                    <img id="img-4" class="img_size" src="./IMG/water-pump_off.png" alt="bom nuoc">
+                    <a href="" style="text-decoration: none; font-size: 3rem;" class="">BƠM TƯỚI</a>
+                    <div class="mini_display4 ">
+                      <h2 style="text-align: left;color: #555; font-size: 2rem; margin-left: 2rem;">
+                           Dòng điện :<span style="color:#2e7dc1" id="current_4"> 9.99</span > <br>
+                           Điện áp&emsp;  :<span style="color: #2e7dc1" id="voltage_4"> 99.99</span> <br>
+                           Công suất :<span style="color: #2e7dc1" id="pow_4"> 99.99</span> 
+                      </h2>
+                      <div style="position: absolute; top: 1rem; right: 2rem; font-size: 2rem;">
+                        A <br>
+                        V <br>
+                        W
+                     </div>
+                    </div>  
+                </span>
+            </div>
+    </body>
+  
+</html>

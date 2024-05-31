@@ -1,0 +1,120 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Đồ án ESP32</title>
+         <link rel="stylesheet" href="./lib/font/fontawesome-free-6.5.1-web/fontawesome-free-6.5.1-web/css/all.min.css">
+          <link rel="stylesheet" href="./lib/img/motor.jpg">
+        <link rel="icon" href="https://tse2.mm.bing.net/th?id=OIP.oPoSwnN87oIRrVrk1TazHgAAAA&pid=Api&P=0&h=180" type="image/x-icon">
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <header class="header__style">
+      <div class>
+          <nav class="header__style-title">
+              <img  src="https://i.pinimg.com/originals/25/29/ff/2529fffff5adec4cc63d0efc7d52a7f4.png" alt="logoute" class="logo_ute">
+              <div class="title">
+                <span style="font-size:2rem; color: #0846a3; border-bottom: #0846a3 solid 3px;">ĐẠI HỌC SƯ PHẠM KỸ THUẬT TP. HỒ CHÍ MINH</span> <br>
+                <h4 style="font-size: 1.5rem; color: #e90000; margin: 0.8rem 0 0 0.5rem;">KHOA ĐIỆN-ĐIỆN TỬ </h4>
+                <h1><div >ESP32 WebServer<br>Sử dụng webserver điều khiển và thu thập dữ liệu </div> </h1>
+              </div>
+               <img src="https://tse2.mm.bing.net/th?id=OIP.oPoSwnN87oIRrVrk1TazHgAAAA&pid=Api&P=0&h=180" alt="Logo SPKT" class="UTE_img">
+              
+            </nav>
+      </div>
+</header> 
+    <body onload="startTime()">   
+
+    <div class="nav">
+      <ul class="nav-list">
+        <li class="nav-item"><nav><a href="index.html" style="text-decoration: none;">GIỚI THIỆU</a></nav></li>
+        <li class="nav-item"><nav><a href="giamsat.html" style="text-decoration: none;">GIÁM SÁT</a></nav></li>
+        <li class="nav-item"><a href="dieukhien.html" style="text-decoration: none;">ĐIỀU KHIỂN</a></li>
+      </ul>
+     
+    </div>
+
+        
+        <script src="https://www.gstatic.com/charts/loader.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gaugeJS/dist/gauge.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
+        <script src="main.js"></script>
+        
+        <div class="bibi" id="lk"></div>
+        
+        <section class="control-frame">
+          <ul class="control">
+            <li id="control-panel" class="control-panel">
+              <div class="control_board">
+                <p class="control-title">BẢNG ĐIỀU KHIỂN</p>
+                <h1> <div id="timer"></div></h1>
+                
+              <p id= "thoigian"></p>
+              <span><button  class="button btn-item2" id="autobtn" onclick="autoONOFF()">BUTTON</button></span><br><br>
+              <form action="#" method="get" style="margin-bottom: 0.5rem;">
+                <label for="fname" style="color: #e90000;">Cài đặt nhiệt độ:</label><br>
+                <input type="number" step="any" id="setnhietdo">
+                <input type="submit" value="OK" onclick="giatri()">
+                <!-- <span id="hienthiND">00</span> -->
+              </form>
+
+              <form action="#" method="get" style="margin-bottom:0.5rem;">
+                <label for="lname" style="color: #e90000;">Cài đặt độ ẩm không khí:</label><br>
+                <input type="number" id="setdoam">
+                <input type="submit" value="OK" onclick="giatri1()">
+                <!-- <span id="hienthiDA">00</span> -->
+              </form>
+
+              <form action="#" method="get" style="margin-bottom: 0.5rem;">
+                <label for="nname" style="color: #e90000;">Cài đặt độ ẩm đất:</label><br>
+                <input type="number" id="setdoamdat">
+                <input type="submit" value="OK" onclick="giatri2()">
+                <!-- <span id="hienthiDAD">00</span> -->
+              </form> <br>
+              <label for="timeInput">Cài đặt thời gian mở đèn:</label><br>
+              <input type="time" id="timeInput">
+              <button onclick="readTime()">OK</button>
+              <span id="hienthiGM">00</span><span>:</span><span id="hienthiPM">00</span><br><br>
+              <label for="timeInput1">Cài đặt thời gian tắt đèn:</label><br>
+              <input type="time" id="timeInput1">
+              <button onclick="readTime1()">OK</button>
+              <span id="hienthiGT">00</span><span>:</span><span id="hienthiPT">00</span><br><br>
+              </div>
+              
+              <!-- <div id="control_p">
+                <form action="#" id="p_control">
+                    <p class="title-modal">Nhập thông số P</p>
+                    <input type="number" step="any" id="setnhietdo" class="formgroup">
+                    <button type="submit" onclick="giatri1()">OK</button>
+                </form>
+            </div>
+
+            <div id="control_i">
+                <form action="#" id="i_control">
+                    <p class="title-modal">Nhập thông số I</p>
+                    <input type="number" step="any" id="temp_i" class="formgroup">
+                    <button type="submit" id="OK">OK</button>
+                </form>
+            </div>
+
+            <div id="control_d">
+                <form action="#" id="d_control">
+                    <p class="title-modal">Nhập thông số D</p>
+                    <input type="number" step="any" id="temp_d" class="formgroup">
+                    <button type="submit" id="OK">OK</button>
+                </form>
+            </div> -->
+
+            </li>
+            <li id="control-valse" class="control-panel">
+               <article>
+                <iframe id="div_tudong" src="dktudong.html" width="100%" height="100%" class="frame_AT"></iframe>
+                 <iframe id="div_tay" src="dktay.html" width="100%" height="100%"></iframe>
+               </article>
+            </li>
+          </ul>
+        </section>
+    </body>
+  
+</html>
